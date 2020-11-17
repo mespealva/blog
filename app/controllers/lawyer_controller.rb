@@ -1,6 +1,6 @@
 class LawyerController < ApplicationController
     def index
-      @lawyer = Lawyer.all
+      @lawyers = Lawyer.all
     end
   
     def show

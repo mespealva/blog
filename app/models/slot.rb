@@ -1,7 +1,7 @@
   class Slot < ApplicationRecord
     belongs_to :availability
   
-    DURATION_IN_MINUTES = 30
+    DURATION_IN_MINUTES = 90
   
     def generate_time_slots(start_time:, finish_time:)
       start_time.remove_all_spaces! # TODO: move this to the importer
@@ -12,7 +12,6 @@
     end
   
     class << self
-      # N + 1 fix
       def all_with_availabilities(ids)
         includes(:availability).where('availability_id IN (?)', ids).references(:availability)
       end
