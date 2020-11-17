@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   #get 'client/logout'
   #post 'client/create'
 
-  root 'pages#home'
+  root 'articles#index'
 end
