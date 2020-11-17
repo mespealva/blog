@@ -5,7 +5,7 @@ class LawyerController < ApplicationController
   
     def show
       @lawyer = Lawyer.includes(:availabilities).find(params[:id])
-      @client = Client.find(session[:student_id])
-      @slots = Slot.all_with_availabilities(@lawyer.availabilities.ids)
+      @client = Client.find(current_user.id)
+      @slots = Availability.where(user_id: params[:id])
     end
   end

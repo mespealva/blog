@@ -7,15 +7,12 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   
   resources :articles
-  
+  resources :availabilities
   resources :categories, except: [:destroy]
   get 'appointment/:id', to: 'appointment#show', as: 'appointment_show'
   post 'appointment/create'
   get 'lawyers', to: 'lawyer#index', as:"lawyers"
   get 'lawyer/:id', to: 'lawyer#show', as: 'lawyer_show'
-  #get 'client/new'
-  #get 'client/logout'
-  #post 'client/create'
 
   root 'articles#index'
 end

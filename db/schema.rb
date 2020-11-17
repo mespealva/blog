@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_023932) do
 
   create_table "slots", force: :cascade do |t|
     t.bigint "availability_id"
-    t.boolean "available"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["availability_id"], name: "index_slots_on_availability_id"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_023932) do
     t.string "uid"
     t.string "avatar_url"
     t.string "full_name"
-    t.string "type"
+    t.string "type", default: "Client"
     t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

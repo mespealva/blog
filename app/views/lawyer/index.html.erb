@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-6 offset-3 text-center">
       <% @lawyers.each do |lawyer| %>
-        <div class="p-1"><%= link_to layer.name, lawyer_show_path(lawyer.id), class: 'lawyer' %></div>
+        <div class="p-1"><%= link_to lawyer.full_name, lawyer_show_path(lawyer.id), class: 'lawyer' %></div>
       <% end %>
     </div>
   </div>

@@ -16,7 +16,11 @@
           <%= link_to "Blog", articles_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <% if user_signed_in? && current_user.type== "Lawyer"%> 
+          <%= link_to "disponibilidad", availabilities_path, class: "nav-link" %>
+          <% else %>
           <%= link_to "Asesorias", new_user_session_path, class: "nav-link" %>
+        <%end%>
         </li>
       </ul>
     </div>
