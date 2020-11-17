@@ -1,0 +1,19 @@
+<%= form_for @client, url: client_create_path, class: 'text-left' do |form| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@client.errors.count, "error") %> stopped this account from being created:</h2>
+      <ul>
+        <% @client.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <label for="inputName">Name:</label>
+    <%= form.text_field :name, class: 'form-control', id: 'inputName', placeholder: 'Joe Smith' %>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Continue</button>
+<% end %>
