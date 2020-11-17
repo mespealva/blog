@@ -1,5 +1,4 @@
 class Client < User
-    using Refinements
     validates :full_name, presence: true
   
     def to_lawyers_time_zone(time:, layer:)
