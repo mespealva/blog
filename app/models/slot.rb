@@ -1,7 +1,6 @@
   class Slot < ApplicationRecord
     belongs_to :availability
   
-    using Refinements
     DURATION_IN_MINUTES = 30
   
     def generate_time_slots(start_time:, finish_time:)
